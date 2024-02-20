@@ -1,0 +1,27 @@
+#container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    aside {
+        width: 200px;
+        background-color: #001529;
+    }
+
+    section {
+        flex: 1;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+
+        header {
+            height: 60px;
+            background-color: lightcoral;
+        }
+
+        main {
+            flex: 1;
+            background-color: lightgreen;
+        }
+    }
+}
