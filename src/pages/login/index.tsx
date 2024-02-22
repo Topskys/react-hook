@@ -1,6 +1,7 @@
 import "./login.scss"
 import { Button, Form, Input } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 
 
 type FieldType = {
@@ -8,15 +9,19 @@ type FieldType = {
     password?: string;
 };
 
-const onFinish = (values: FieldType) => {
-    console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
 
 export default () => {
+    const navigate = useNavigate();
+
+    const onFinish = (values: FieldType) => {
+        console.log('Success:', values);
+        navigate("/layout/home");
+    };
+
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
     return (
         <div className="login-container">
             <div className="login-wrap">

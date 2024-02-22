@@ -1,8 +1,11 @@
+import React from "react";
 import Layout from "../layout";
 import { useRoutes, Navigate } from "react-router-dom";
 import Home from "../pages/home";
 import User from "../pages/user";
 import Login from "../pages/login";
+import NotFound from "../pages/404";
+import lazyLoad from "./lazyLoad";
 
 
 export const routes = [
@@ -16,11 +19,21 @@ export const routes = [
     },
     {
         path: "/login",
-        element: <Login/>,
+        element: lazyLoad(React.lazy(() => import("../pages/login"))), // 路由懒加载
         label: "登录",
         icon: "",
         key: "login",
         hidden: true,
+        requiredAuth: false,
+    },
+    {
+        path: "/404",
+        element: <NotFound />,
+        label: "登录",
+        icon: "",
+        key: "404",
+        hidden: true,
+        requiredAuth: false,
     },
     {
         path: "/layout",
@@ -44,6 +57,10 @@ export const routes = [
                 key: "user"
             }
         ]
+    },
+    {
+        path: "*",
+        element: <Navigate to="/404" />,
     }
 ]
 
