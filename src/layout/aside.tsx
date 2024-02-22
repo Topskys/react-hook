@@ -7,13 +7,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 const sessionSelectKeys = JSON.parse(sessionStorage.getItem('selectKeys') || '[]');
 const sessionOpenKeys = JSON.parse(sessionStorage.getItem('openKeys') || '[]');
 
-function aside({ location }) {
+function aside() {
     const navigate = useNavigate();
-    // const location = useLocation();
+    const location = useLocation();
     const [router] = useState(routes);
     const [selectKeys, setSelectKeys] = useState<[]>(sessionSelectKeys);
     const [openKeys, setOpenKeys] = useState<[]>(sessionOpenKeys);
-console.log("lklk----", location)
 
     /**
      * 点击菜单项事件

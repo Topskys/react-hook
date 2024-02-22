@@ -2,7 +2,7 @@ export interface MetaProps {
     keepAlive?: boolean; // 是否保持页面活跃状态
     title: string; // 页面标题
     key?: string; // 页面唯一标识
-    requiredAuth?: boolean; // 是否需要登录
+    unWantedAuth?: boolean; // 是否需要登录
 }
 
 export interface RouteObject {

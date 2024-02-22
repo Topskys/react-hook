@@ -7,7 +7,7 @@ import "normalize.css" // 样式归一化
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode> // 会执行两次
     <App />
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

@@ -8,7 +8,7 @@ export default (props: { children: JSX.Element }) => {
     const { pathname } = useLocation();
     const router = matchRoute(pathname, routes)
 
-    if (!router.meta?.requiredAuth) {
+    if (router.meta?.unWantedAuth) {
         return props.children
     }
     if (!token) {

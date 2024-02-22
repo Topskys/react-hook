@@ -24,7 +24,7 @@ export const routes = [
         icon: "",
         key: "login",
         hidden: true,
-        requiredAuth: false,
+        // unWantedAuth: true,
     },
     {
         path: "/404",
@@ -33,7 +33,7 @@ export const routes = [
         icon: "",
         key: "404",
         hidden: true,
-        requiredAuth: false,
+        // unWantedAuth: true,
     },
     {
         path: "/layout",
